@@ -25,15 +25,7 @@ export async function GET(request: NextRequest) {
     );
 
   // locate the data file
-  const dataFilePath = path.join(
-    __dirname,
-    "..",
-    "..",
-    "..",
-    "..",
-    "..",
-    "data.csv"
-  );
+  const dataFilePath = path.join(process.cwd(), "public", "data.csv");
 
   // load and parse items content
   const items = parseItemsCsvContent(await readCsvContent(dataFilePath));
